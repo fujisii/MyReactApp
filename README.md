@@ -20,7 +20,7 @@
 ```html
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    
+
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
@@ -43,6 +43,27 @@
   - 例：hrタグ
   - JSXはXMLが元になっているので、閉じタグがないタブの場合は、最後に必ず「/」でタグを閉じる必要あり
 
-    ```html
-    <hr/>
-    ```
+  ```html
+  <hr/>
+  ```
+
+## #05 属性やイベントを扱ってみよう
+
+- JSXではHTMLの属性も使うことができるが、属性によっては注意が必要
+- classは新しいJavaScriptでは予約後なのでclassNameとしないといけない
+
+  ```html
+  <div className="box"></div>
+  ```
+
+- style属性で指定することもできる
+- style属性にはオブジェクト形式で渡す必要がある
+- 一旦波括弧をつけたあとにその中にオブジェクトなので...二重波括弧のようなかたちになる
+- プロパティのpxは省略できる
+- 属性はcamelCaseで書く必要がある
+
+  ```html
+  <div style={{width:100, height:100, backgroundColor:'tomato'}}></div>
+  ```
+
+- 関数は波括弧だけで書いてあげる必要がある
