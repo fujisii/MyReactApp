@@ -67,3 +67,34 @@
   ```
 
 - 関数は波括弧だけで書いてあげる必要がある
+
+  ```html
+  <div style={{width:100, height:100, backgroundColor:'tomato'}} onClick={showMessage}></div>
+  ```
+
+## #06 Componentを作ってみよう
+
+- Componentの名前の1文字目は必ず大文字にすること
+
+  ```html
+  <Counter/>
+  ```
+
+- Componentの内容はほとんど同じだけど少しだけ変えたいという場合には、Componentに属性をつけてあげればOK
+
+  ```html
+  <div>
+    <Counter color="tomato"/>
+    <Counter color="skyblue"/>
+    <Counter color="limegreen"/>
+  </div>
+  ```
+
+- Componentで値を受け取るには、引数を指定してあげればOK
+- ちなみに以下のpropsは、読み取り専用の値という点に注意する
+
+  ```javascript
+  function Counter(props) {
+    return <div>0 {props.color}</div>
+  }
+  ```
