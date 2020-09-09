@@ -98,3 +98,7 @@
     return <div>0 {props.color}</div>
   }
   ```
+
+## #07 Propsを使ってみよう
+
+## #08 スタイルを整えよう
