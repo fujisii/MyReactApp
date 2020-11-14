@@ -114,3 +114,5 @@
 ## #11 Stateを使ってみよう
 
 ## #12 React Developer Toolsを使おう
+
+## #13 setStateで値を更新しよう
