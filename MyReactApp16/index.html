@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>React Practice</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    (() => {
+
+      function Counter(props) {
+        return (
+          <li style={{backgroundColor:props.counter.color}}>
+            {props.counter.id}:{props.counter.count}
+          </li>
+        )
+      }
+
+      function CounterList(props) {
+        const counters = props.counters.map(counter => {
+          return (
+            // ループで処理するような要素にはkeyというユニークな値を付けないといけない
+            // 今回だとkeyにはidが使えるので、counterにkey属性を付けてあげる
+            <Counter
+              counter={counter}
+              key={counter.id}
+            />
+          );
+        });
+        return (
+          <ul>
+            {counters}
+          </ul>
+        );
+      }
+
+      // Reactでは今回のようにstateを持つComponentは最小限にしてあげて、
+      // その他のComponentには極力値を持たせないという設計が良いとされる
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            counters: [
+              {id: 'A', count: 0, color: 'tomato'},
+              {id: 'B', count: 0, color: 'skyblue'},
+              {id: 'C', count: 0, color: 'limegreen'},
+            ]
+          }
+        }
+        render() {
+          return (
+            <div className="container">
+              <CounterList counters={this.state.counters}/>
+              <div>TOTAL INVENTORY: 3</div>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+      );
+    })();
+  </script>
+</body>
+</html>
