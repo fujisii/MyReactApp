@@ -112,3 +112,5 @@
 - Component は今まで関数で作ってきたが、あとで見ていく state という仕組みを使うには class で書き換えてあげる必要があります
 
 ## #11 Stateを使ってみよう
+
+## #12 React Developer Toolsを使おう
