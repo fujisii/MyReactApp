@@ -116,3 +116,5 @@
 ## #12 React Developer Toolsを使おう
 
 ## #13 setStateで値を更新しよう
+
+## #14 共通要素でStateを管理しよう
